@@ -1,8 +1,8 @@
-#PBS -N BananaGraphs
+#PBS -N BrillNoetherConjecture
 #PBS -q hpcc
-#PBS -l nodes=1:ppn=12
-#PBS -l walltime=24:00:00
-#PBS -l mem=48GB
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=96:00:00
+#PBS -l mem=96GB
 #PBS -m abe -M ks33@williams.edu
 #PBS -o banana_results
 #PBS -e banana_error
@@ -18,6 +18,6 @@ echo “”
 cat $PBS_NODEFILE
 echo “”
 module load python/anaconda3
-python banana_gonality.py 2 6
+python ../src/brill_noether_test.py
 echo -n “Finished program at: ”
 date
