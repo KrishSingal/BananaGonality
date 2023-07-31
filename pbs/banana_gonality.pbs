@@ -1,11 +1,9 @@
 #PBS -N BananaGonality
 #PBS -q hpcc
-#PBS -l nodes=1:ppn=16
-#PBS -l walltime=96:00:00
+#PBS -l nodes=1:ppn=64
+#PBS -l walltime=288:00:00
 #PBS -l mem=96GB
 #PBS -m abe -M ks33@williams.edu
-#PBS -o banana_results
-#PBS -e banana_error
 
 echo ""
 echo “***Ignore Warnings for access to tty***”
@@ -18,6 +16,6 @@ echo “”
 cat $PBS_NODEFILE
 echo “”
 module load python/anaconda3
-python ../src/banana_gonality.py 2 7 1
+python ../src/banana.py 2 7 1 gon
 echo -n “Finished program at: ”
 date
