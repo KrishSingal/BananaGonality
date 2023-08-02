@@ -3,6 +3,7 @@ from recursive_banana_gonality import driver
 import sys
 import copy
 import csv
+import math
 
 sequences = []
 n = 0
@@ -103,7 +104,7 @@ def recursive_banana_gon(lower_nodes, upper_nodes, multiplier):
     for i in range(lower_nodes, upper_nodes+1):
         construct_sequences(i, 0, [-1]*(i-1), multiplier)
 
-    fields = ['Edge Sequence', 'Genus', '1st order gonality']
+    fields = ['Edge Sequence', 'Genus', '1st order gonality', 'Counterexample']
 
     filename = "../results/recursive_banana_gonality_{}_{}_{}.csv".format(lower_nodes, upper_nodes, multiplier)
  
@@ -112,10 +113,16 @@ def recursive_banana_gon(lower_nodes, upper_nodes, multiplier):
         csvwriter.writerow(fields) 
 
         for sequence in sequences:
-            result = [",".join([str(x) for x in sequence]), genus(sequence)]
+            g = genus(sequence)
+            result = [",".join([str(x) for x in sequence]), g]
 
             fgon = driver(sequence)
             result.append("gonality: {}".format(fgon))
+
+            if fgon > math.floor((float(g) + 3) / 2):
+                result.append("Yes")
+            else:
+                result.append('No')
 
             csvwriter.writerow(result)
 

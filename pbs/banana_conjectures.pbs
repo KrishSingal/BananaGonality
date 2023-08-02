@@ -1,7 +1,7 @@
 #PBS -N BananaConjectures
 #PBS -q hpcc
 #PBS -l nodes=1:ppn=64
-#PBS -l walltime=288:00:00
+#PBS -l walltime=72:00:00
 #PBS -l mem=96GB
 #PBS -m abe -M ks33@williams.edu
 
