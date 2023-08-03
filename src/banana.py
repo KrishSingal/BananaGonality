@@ -43,19 +43,19 @@ def banana_conj(lower_nodes, upper_nodes, multiplier):
             setup(graph)
 
             fgon, winning_divisor = gon(1)
-            result.append("gonality: {}".format(fgon))
+            result.append(fgon)
             result.append(winning_divisor)
 
             sgon, winning_divisor = gon(2)
-            result.append("gonality: {}".format(sgon))
+            result.append(sgon)
             result.append(winning_divisor)
 
             tgon, winning_divisor = gon(3)
-            result.append("gonality: {}".format(tgon))
+            result.append(tgon)
             result.append(winning_divisor)
 
             fmfgon, winning_divisor = mfgon(1)
-            result.append("gonality: {}".format(fmfgon))
+            result.append(fmfgon)
             result.append(winning_divisor)
 
             if sgon == fgon + 1:
@@ -95,7 +95,7 @@ def banana_gonality(lower_nodes, upper_nodes, multiplier):
             setup(graph)
 
             fgon, winning_divisor = gon(1)
-            result.append("gonality: {}".format(fgon))
+            result.append(fgon)
             result.append(winning_divisor)
 
             csvwriter.writerow(result)
@@ -117,7 +117,7 @@ def recursive_banana_gon(lower_nodes, upper_nodes, multiplier):
             result = [",".join([str(x) for x in sequence]), g]
 
             fgon = driver(sequence)
-            result.append("gonality: {}".format(fgon))
+            result.append(fgon)
 
             if fgon > math.floor((float(g) + 3) / 2):
                 result.append("Yes")
