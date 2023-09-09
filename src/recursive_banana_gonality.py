@@ -62,5 +62,3 @@ def recurrence(sequence, k, dp):
 # if __name__ == '__main__':
     # print(2/3)
     # print(driver([2,3,2]))
-    
-    

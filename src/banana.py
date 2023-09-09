@@ -79,7 +79,7 @@ def banana_gonality(lower_nodes, upper_nodes, multiplier):
     
     fields = ['Edge Sequence', 'Genus', '1st order gonality', 'Divisor']
 
-    filename = "../results/banana_gonality_{}_{}_{}.csv".format(lower_nodes, upper_nodes, multiplier)
+    filename = "../results/banana_gonality_{}_{}_{}.csv".format(lower_nodes, upper_nodes, multiplier) 
  
     with open(filename, 'w') as csvfile: 
         csvwriter = csv.writer(csvfile) 
